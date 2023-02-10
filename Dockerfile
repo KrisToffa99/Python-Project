@@ -6,7 +6,7 @@ WORKDIR /app
 COPY requirement.txt requirement.txt
 RUN pip install -r requirement.txt
 
-COPY ./app.py .
-COPY ./test_app.py .
+COPY ./src/app.py .
+COPY ./tests/test_app.py .
 
 CMD flask run --host=0.0.0.0 --port=5000
