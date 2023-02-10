@@ -39,3 +39,8 @@ jobs:
         pip install flask
         export PYTHONPATH=src
         pytest
+    - name: Build & Push Image
+      run: |
+        echo "${{ secrets.DOCKERPW }}" | docker login -u "kriztoffa" -p "Melancholy"
+        docker image build -t kriztoffa/flaskapp:v1
+        docker push kriztoffa/flaskapp:v1
